@@ -10,6 +10,6 @@ This is my `Personal Portfolio`.
 ## To do Tasks:
 
 * Implement revalidation every hour.
-* Correct CSS on load dealy.
+* Correct CSS on load delay.
 * Change DNS server.
 
