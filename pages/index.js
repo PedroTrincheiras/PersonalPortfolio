@@ -26,7 +26,7 @@ export async function getServerSideProps() {
     certificatesData.push(doc.data());
   });
 
-  return { revalidate: 3600, props: { data: {ProjectsData: { projectsData } , CertificatesData: {certificatesData} }} };
+  return { props: { data: {ProjectsData: { projectsData } , CertificatesData: {certificatesData} }} };
 }
 
 function Home({ data }) {
