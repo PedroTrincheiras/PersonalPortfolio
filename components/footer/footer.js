@@ -4,7 +4,7 @@ function Footer() {
   var d = new Date().getFullYear();
   return (
     <footer>
-      <p>Made with <span>❤️</span> by Pedro Trincheiras.</p>
+      <p>Made by Pedro Trincheiras<span>.</span></p>
       <small>Copyright &copy; {d}, Pedro Trincheiras. All rights reserved.</small>
     </footer>
   );
