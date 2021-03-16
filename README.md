@@ -9,7 +9,9 @@ This is my [`Personal Portfolio`](https://pedrotrincheiras.dev).
 
 ## To do Tasks:
 
-* Implement revalidation every hour.
 * Correct CSS on load delay.
-* Change DNS server.
+
+## New Features:
+
+* Revalidation of the values on FireBase every hour, until then always returns the same static page.
 
