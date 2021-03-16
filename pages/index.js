@@ -12,7 +12,7 @@ import { getProjects } from "../fetch/getProjects";
 import { getCertificates } from "../fetch/getCertificates";
 import AchivementsSection from "../components/pageSections/achivements/achivementsSection";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const projects = await getProjects();
   const certificates = await getCertificates();
   var projectsData = [];
@@ -26,7 +26,7 @@ export async function getServerSideProps() {
     certificatesData.push(doc.data());
   });
 
-  return { props: { data: {ProjectsData: { projectsData } , CertificatesData: {certificatesData} }} };
+  return { props: { data: {ProjectsData: { projectsData } , CertificatesData: {certificatesData} }}, revalidate: 3600,};
 }
 
 function Home({ data }) {
