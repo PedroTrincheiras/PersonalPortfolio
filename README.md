@@ -1,4 +1,4 @@
-This is my [`Personal Portfolio`](http://www.pedrotrincheiras.dev).
+This is my [`Personal Portfolio`](https://pedrotrincheiras.dev).
 
 ## Tecnologies used:
 
