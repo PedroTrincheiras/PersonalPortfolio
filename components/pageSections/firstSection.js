@@ -15,6 +15,11 @@ function FirstSection() {
     hidden: { opacity: 0 },
     visible: { opacity: 1, x: [200, -10, 0] },
   };
+  
+  const fadeBottom = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, y: [1000, -0, 0] },
+  };
 
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -47,7 +52,13 @@ function FirstSection() {
       >
         I'm a Computer Engineering Student<span>.</span>
       </motion.h2>
-      <p className="info">
+      <motion.p
+        className="info"
+        animate={controls}
+        variants={fadeBottom}
+        initial="hidden"
+        transition={{ duration: 1.5 }}
+      >
         Scroll Down
         <motion.spam
           animate={{ y: 3 }}
@@ -55,7 +66,7 @@ function FirstSection() {
         >
           <FontAwesomeIcon icon={faChevronDown} />
         </motion.spam>
-      </p>
+      </motion.p>
     </div>
   );
 }
