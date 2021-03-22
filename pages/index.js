@@ -35,6 +35,7 @@ function Home({ data }) {
       <Head>
         <title>Pedro Trincheiras</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Hello. I'm Pedro. I'm a Computer Engineering Student and this is my website."/>
       </Head>
       <Header />
       <ParticleBG />
