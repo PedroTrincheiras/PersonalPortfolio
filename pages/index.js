@@ -10,7 +10,6 @@ import ParticleBG from "../components/particlesBG";
 import Head from "next/head";
 import { getProjects } from "../fetch/getProjects";
 import { getCertificates } from "../fetch/getCertificates";
-import AchivementsSection from "../components/pageSections/achivements/achivementsSection";
 
 export async function getStaticProps() {
   const projects = await getProjects();
@@ -31,14 +30,14 @@ export async function getStaticProps() {
 
 function Home({ data }) {
   return (
-    <div>
+    <>
       <Head>
         <title>Pedro Trincheiras</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Hello. I'm Pedro Trincheiras. I'm a Computer Engineering Student and this is my website."/>
       </Head>
-      <Header />
       <ParticleBG />
+      <Header />
       <div>
         <ReactFullpage
           licenseKey={"YOUR_KEY_HERE"}
@@ -58,8 +57,8 @@ function Home({ data }) {
           }}
         />
       </div>
-    </div>
-  );
+    </>
+  )
 }
 
 export default Home;

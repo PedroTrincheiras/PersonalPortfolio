@@ -1,10 +1,40 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React, { useEffect } from "react";
-import ProjectCarousel from "../project/projectCarousel";
+import Slider from "react-slick";
 
 function CertificationSection({ projects }) {
   let certificateCard = [];
+
+  var settings = {
+    centerMode: true,
+    dots: true,
+    infinite: true,
+    arrows: false,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    pauseOnHover: true,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          centerMode: false,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          centerMode: false,
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   projects.certificatesData.forEach((certificate) => {
     certificateCard.push(
@@ -17,8 +47,9 @@ function CertificationSection({ projects }) {
           <p>
             {certificate.entity}, insued {certificate.insued}
           </p>
+          
         </div>
-        <span className="bar" />
+        <span className="bar"></span>
       </div>
     );
   });
@@ -55,7 +86,6 @@ function CertificationSection({ projects }) {
       >
         Certifications<span>.</span>
       </motion.h1>
-      <div className="body">
         <motion.div
           animate={controls}
           variants={fadeBottom}
@@ -63,10 +93,11 @@ function CertificationSection({ projects }) {
           transition={{ duration: 1 }}
           className="certificates"
         >
-          {certificateCard}
+          <Slider {...settings}>{certificateCard}</Slider>
+          
         </motion.div>
       </div>
-    </div>
+
   );
 }
 
